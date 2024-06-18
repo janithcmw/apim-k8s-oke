@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-gateway-log-storage-volume
+  namespace : {{ .Release.Namespace }}
+spec:
+  capacity:
+    storage: 15Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: {{ .Values.wso2.deployment.storage.mountTargetIP }}
+    path: "/{{ template "apim-320-dist-oke.resource.prefix" . }}-gateway-volume/am-gateway-log-storage-volume"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-gateway-shared-synapse-configs-volume
+  namespace : {{ .Release.Namespace }}
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: {{ .Values.wso2.deployment.storage.mountTargetIP }}
+    path: "/{{ template "apim-320-dist-oke.resource.prefix" . }}-gateway-volume/am-gateway-shared-synapse-configs-volume"
+
