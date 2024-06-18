@@ -50,8 +50,8 @@ spec:
       - name: init-permissions-synapse
         image: busybox
 #        command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs/.snapshot*' -exec chmod 777 {} +" ]
-        command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs...';
-                    find /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs/.snapshot*' -exec chmod 777 {} +;
+        command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs...';
+                    find /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs/.snapshot*' -exec chmod 777 {} +;
                     if [ $? -eq 0 ]; then
                       echo 'Permissions set successfully for synapse mount.';
                     else
@@ -60,13 +60,13 @@ spec:
         ]
         volumeMounts:
           - name: wso2am-gateway-storage-volume
-#            mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs
-            mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs
+            mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs
+#            mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs
       - name: init-permissions-logs
         image: busybox
 #        command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
-        command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/logs...';
-                    find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +;
+        command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/logs...';
+                    find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +;
                     if [ $? -eq 0 ]; then
                       echo 'Permissions set successfully for log mount.';
                     else
@@ -75,8 +75,8 @@ spec:
         ]
         volumeMounts:
           - name: wso2am-gateway-log-storage-volume
-#            mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
-            mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
+            mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+#            mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
       containers:
       - name: wso2am-gateway
 #        {{- if .Values.wso2.deployment.am.dockerRegistry }}
@@ -88,7 +88,8 @@ spec:
 #        {{- else }}
 #        image: docker.wso2.com/{{ .Values.wso2.deployment.am.imageName }}:{{ .Values.wso2.deployment.am.imageTag }}
 #        {{- end }}
-        image: janithcmw/wso2apim:321.7
+        image: janithcmw/wso2apim:320.373
+#        image: janithcmw/wso2apim:321.7
         imagePullPolicy: {{ .Values.wso2.deployment.am.imagePullPolicy }}
         env:
         - name: PROFILE_NAME
@@ -140,11 +141,11 @@ spec:
           protocol: TCP
         volumeMounts:
         - name: wso2am-gateway-storage-volume
-#          mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs
-          mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs
+          mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs
+#          mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs
         - name: wso2am-gateway-log-storage-volume
-#          mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
-          mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
+          mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+#          mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
         - name: wso2am-gateway-conf
           mountPath: /home/wso2carbon/wso2-config-volume/repository/conf/deployment.toml
           subPath: deployment.toml
