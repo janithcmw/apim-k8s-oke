@@ -140,7 +140,7 @@ spec:
           protocol: TCP
         volumeMounts:
         - name: wso2am-gateway-storage-volume
-#          mountPath: /home/wso2carbon/wso2-artifact-volume/repository/deployment/server/synapse-configs
+#          mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/synapse-configs
           mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/synapse-configs
         - name: wso2am-gateway-log-storage-volume
 #          mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
