@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-publisher-local-carbon-database-volume
+  namespace : {{ .Release.Namespace }}
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: {{ .Values.wso2.deployment.storage.mountTargetIP }}
+    path: "/{{ template "apim-320-dist-oke.resource.prefix" . }}-publisher-volume/am-publisher-local-carbon-database-volume"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-publisher-solr-indexed-data-volume
+  namespace : {{ .Release.Namespace }}
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: {{ .Values.wso2.deployment.storage.mountTargetIP }}
+    path: "/{{ template "apim-320-dist-oke.resource.prefix" . }}-publisher-volume/am-publisher-solr-indexed-data-volume"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-publisher-log-storage-volume
+  namespace : {{ .Release.Namespace }}
+spec:
+  capacity:
+    storage: 15Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: {{ .Values.wso2.deployment.storage.mountTargetIP }}
+    path: "/{{ template "apim-320-dist-oke.resource.prefix" . }}-publisher-volume/am-publisher-log-storage-volume"
