@@ -90,7 +90,7 @@ spec:
 #          {{- else }}
 #          image: docker.wso2.com/{{ .Values.wso2.deployment.am.imageName }}:{{ .Values.wso2.deployment.am.imageTag }}
 #          {{- end }}
-          image: janithcmw/wso2apim:320.373
+          image: {{ .Values.wso2.deployment.am.imageNameDirect }}
           imagePullPolicy: {{ .Values.wso2.deployment.am.imagePullPolicy }}
           env:
             - name: PROFILE_NAME

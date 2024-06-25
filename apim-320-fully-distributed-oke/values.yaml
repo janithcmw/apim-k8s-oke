@@ -61,6 +61,7 @@ wso2:
       # dockerRegistry: ""
       imageName: "wso2am"
       imageTag: "3.2.0"
+      imageNameDirect: "janithcmw/wso2apim:321.3"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
       imagePullSecrets:
