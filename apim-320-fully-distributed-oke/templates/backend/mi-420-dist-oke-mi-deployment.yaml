@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
         - name: wso2mi
-          #image: virajhasith/wso2mi-4.1.0:latest
-          image: virajhasith/wso2mi-4.1.0:randomPayload
+          image: jjanithcmw/wso2mi:400
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8290
