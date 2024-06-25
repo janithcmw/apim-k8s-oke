@@ -53,9 +53,9 @@ spec:
           command: ['sh', '-c', 'echo -e "Checking for the availability of Key Manager deployment"; while ! nc -z {{ template "apim-320-dist-oke.resource.prefix" . }}-km-service 9443; do sleep 1; printf "-"; done; echo -e "  >> Key Manager has started";']
         - name: init-permissions-logs
           image: busybox
-#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
-          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/logs...';
-                      find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +;
+#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
+          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/logs...';
+                      find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +;
                       if [ $? -eq 0 ]; then
                         echo 'Permissions set successfully.';
                       else
@@ -64,12 +64,12 @@ spec:
           ]
           volumeMounts:
             - name: wso2am-tm-log-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
         - name: init-permissions-executionplans
           image: busybox
-          #          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
-          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/deployment/sever/executionplans...';
-                    find /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/executionplans -not -path '/home/wso2carbon/wso2am-3.2.0/repository/deployment/server/executionplans/.snapshot*' -exec chmod 777 {} +;
+          #          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
+          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/deployment/sever/executionplans...';
+                    find /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/executionplans -not -path '/home/wso2carbon/wso2am-3.2.1/repository/deployment/server/executionplans/.snapshot*' -exec chmod 777 {} +;
                     if [ $? -eq 0 ]; then
                       echo 'Permissions set successfully.';
                     else
@@ -78,7 +78,7 @@ spec:
           ]
           volumeMounts:
             - name: wso2am-tm-shared-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/executionplans
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/executionplans
       containers:
         - name: wso2am-tm
 #          {{- if .Values.wso2.deployment.am.dockerRegistry }}
@@ -141,9 +141,9 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: wso2am-tm-shared-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/deployment/server/executionplans
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/deployment/server/executionplans
             - name: wso2am-tm-log-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
             - name: wso2am-tm-conf
               mountPath: /home/wso2carbon/wso2-config-volume/repository/conf
             - name: wso2am-tm-conf-entrypoint

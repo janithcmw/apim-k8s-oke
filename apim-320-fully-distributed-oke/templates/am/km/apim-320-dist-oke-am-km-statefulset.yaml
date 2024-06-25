@@ -50,9 +50,9 @@ spec:
       {{- end }}
         - name: init-permissions-logs
           image: busybox
-#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
-          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/logs...';
-                      find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +;
+#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
+          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/logs...';
+                      find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +;
                       if [ $? -eq 0 ]; then
                         echo 'Permissions set successfully for log mount.';
                       else
@@ -61,7 +61,7 @@ spec:
           ]
           volumeMounts:
             - name: wso2am-km-log-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
       containers:
         - name: wso2am-km
 #          {{- if .Values.wso2.deployment.am.dockerRegistry }}
@@ -124,7 +124,7 @@ spec:
               mountPath: /home/wso2carbon/wso2-config-volume/repository/conf/deployment.toml
               subPath: deployment.toml
             - name: wso2am-km-log-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
             {{ if .Values.wso2.deployment.dependencies.mysql }}
             - name: mysql-connector-jar
               mountPath: /home/wso2carbon/wso2-artifact-volume/repository/components/dropins

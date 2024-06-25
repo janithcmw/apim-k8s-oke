@@ -50,7 +50,7 @@ spec:
       {{ end }}
         - name: init-permissions-logs
           image: busybox
-#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
+#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
           command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-analytics-3.2.0/wso2/worker/logs...';
                       find /home/wso2carbon/wso2am-analytics-3.2.0/wso2/worker/logs -not -path '/home/wso2carbon/wso2am-analytics-3.2.0/wso2/worker/logs/.snapshot*' -exec chmod 777 {} +;
                       if [ $? -eq 0 ]; then

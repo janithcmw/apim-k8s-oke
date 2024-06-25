@@ -87,9 +87,9 @@ spec:
         {{end}}
         - name: init-permissions-logs
           image: busybox
-#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
-          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/logs...';
-                      find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +;
+#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
+          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/logs...';
+                      find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +;
                       if [ $? -eq 0 ]; then
                         echo 'Permissions set successfully for log mount.';
                       else
@@ -98,7 +98,7 @@ spec:
           ]
           volumeMounts:
             - name: wso2am-publisher-log-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
       containers:
         - name: wso2am-publisher
 #          {{- if .Values.wso2.deployment.am.dockerRegistry }}
@@ -164,7 +164,7 @@ spec:
           - name: wso2am-publisher-indexed-data-volume
             mountPath: /home/wso2carbon/solr/indexed-data
           - name: wso2am-publisher-log-storage-volume
-            mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+            mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
           - name: wso2am-publisher-conf-entrypoint
             mountPath: /home/wso2carbon/docker-entrypoint.sh
             subPath: docker-entrypoint.sh

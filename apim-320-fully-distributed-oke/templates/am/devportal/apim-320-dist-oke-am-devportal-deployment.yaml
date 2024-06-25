@@ -87,9 +87,9 @@ spec:
         {{end}}
         - name: init-permissions-logs
           image: busybox
-#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
-          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.0/repository/logs...';
-                      find /home/wso2carbon/wso2am-3.2.0/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.0/repository/logs/.snapshot*' -exec chmod 777 {} +;
+#          command: [ "sh", "-c", "find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +" ]
+          command: [ "sh", "-c", "echo 'Setting permissions on /home/wso2carbon/wso2am-3.2.1/repository/logs...';
+                      find /home/wso2carbon/wso2am-3.2.1/repository/logs -not -path '/home/wso2carbon/wso2am-3.2.1/repository/logs/.snapshot*' -exec chmod 777 {} +;
                       if [ $? -eq 0 ]; then
                         echo 'Permissions set successfully for log mount.';
                       else
@@ -98,7 +98,7 @@ spec:
           ]
           volumeMounts:
             - name: wso2am-devportal-log-storage-volume
-              mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+              mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
       containers:
         - name: wso2am-devportal
 #          {{- if .Values.wso2.deployment.am.dockerRegistry }}
@@ -159,7 +159,7 @@ spec:
           - name: wso2am-devportal-conf
             mountPath: /home/wso2carbon/wso2-config-volume/repository/conf
           - name: wso2am-devportal-log-storage-volume
-            mountPath: /home/wso2carbon/wso2am-3.2.0/repository/logs
+            mountPath: /home/wso2carbon/wso2am-3.2.1/repository/logs
           {{ if .Values.wso2.deployment.persistentRuntimeArtifacts.apacheSolrIndexing.enabled }}
           - name: wso2am-devportal-local-carbon-database-storage
             mountPath: /home/wso2carbon/solr/database
