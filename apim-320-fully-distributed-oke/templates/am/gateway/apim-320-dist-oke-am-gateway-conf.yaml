@@ -166,8 +166,8 @@ data:
     # CARBON_LOGFILE is set to be a DailyRollingFileAppender using a PatternLayout.
     appender.CARBON_LOGFILE.type = RollingFile
     appender.CARBON_LOGFILE.name = CARBON_LOGFILE
-    appender.CARBON_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/wso2carbon.log
-    appender.CARBON_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/wso2carbon-%d{MM-dd-yyyy}-%i.log
+    appender.CARBON_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2carbon.log
+    appender.CARBON_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2carbon-%d{MM-dd-yyyy}-%i.log
     appender.CARBON_LOGFILE.layout.type = PatternLayout
     appender.CARBON_LOGFILE.layout.pattern = TID: [%tenantId] [%appName] [%d] %5p {%c} - %m%ex%n
     appender.CARBON_LOGFILE.policies.type = Policies
@@ -184,8 +184,8 @@ data:
     # Appender config to AUDIT_LOGFILE
     appender.AUDIT_LOGFILE.type = RollingFile
     appender.AUDIT_LOGFILE.name = AUDIT_LOGFILE
-    appender.AUDIT_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/audit.log
-    appender.AUDIT_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/audit-%d{MM-dd-yyyy}.log
+    appender.AUDIT_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/${sys:instance.log}-audit.log
+    appender.AUDIT_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/${sys:instance.log}-audit-%d{MM-dd-yyyy}.log
     appender.AUDIT_LOGFILE.layout.type = PatternLayout
     appender.AUDIT_LOGFILE.layout.pattern = TID: [%tenantId] [%d] %5p {%c} - %m%ex%n
     appender.AUDIT_LOGFILE.policies.type = Policies
@@ -202,8 +202,8 @@ data:
     # Appender config to send Atomikos transaction logs to new log file tm.out.
     appender.ATOMIKOS_LOGFILE.type = RollingFile
     appender.ATOMIKOS_LOGFILE.name = ATOMIKOS_LOGFILE
-    appender.ATOMIKOS_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/tm.out
-    appender.ATOMIKOS_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/tm-%d{MM-dd-yyyy}.out
+    appender.ATOMIKOS_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/${sys:instance.log}-tm.out
+    appender.ATOMIKOS_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/${sys:instance.log}-tm-%d{MM-dd-yyyy}.out
     appender.ATOMIKOS_LOGFILE.layout.type = PatternLayout
     appender.ATOMIKOS_LOGFILE.layout.pattern = [%d] [%tenantId] %5p {%c} - %m%ex%n
     appender.ATOMIKOS_LOGFILE.policies.type = Policies
@@ -216,8 +216,8 @@ data:
     # Appender config to CARBON_TRACE_LOGFILE
     appender.CARBON_TRACE_LOGFILE.type = RollingFile
     appender.CARBON_TRACE_LOGFILE.name = CARBON_TRACE_LOGFILE
-    appender.CARBON_TRACE_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/wso2carbon-trace-messages.log
-    appender.CARBON_TRACE_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/wso2carbon-trace-messages-%d{MM-dd-yyyy}.log
+    appender.CARBON_TRACE_LOGFILE.fileName = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2carbon-trace-messages.log
+    appender.CARBON_TRACE_LOGFILE.filePattern = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2carbon-trace-messages-%d{MM-dd-yyyy}.log
     appender.CARBON_TRACE_LOGFILE.layout.type = PatternLayout
     appender.CARBON_TRACE_LOGFILE.layout.pattern = [%d] [%tenantId] %5p {%c} - %m%ex%n
     appender.CARBON_TRACE_LOGFILE.policies.type = Policies
@@ -233,8 +233,8 @@ data:
     # Appender config to put correlation Log.
     appender.CORRELATION.type = RollingFile
     appender.CORRELATION.name = CORRELATION
-    appender.CORRELATION.fileName =${sys:carbon.home}/repository/logs/correlation.log
-    appender.CORRELATION.filePattern =${sys:carbon.home}/repository/logs/correlation-%d{MM-dd-yyyy}-%i.log.gz
+    appender.CORRELATION.fileName =${sys:carbon.home}/repository/logs/${sys:instance.log}-correlation.log
+    appender.CORRELATION.filePattern =${sys:carbon.home}/repository/logs/${sys:instance.log}-correlation-%d{MM-dd-yyyy}-%i.log.gz
     appender.CORRELATION.layout.type = PatternLayout
     appender.CORRELATION.layout.pattern = %d{yyyy-MM-dd HH:mm:ss,SSS}|%X{Correlation-ID}|%t|%m%n
     appender.CORRELATION.policies.type = Policies
@@ -251,8 +251,8 @@ data:
     
     appender.ERROR_LOGFILE.type = RollingFile
     appender.ERROR_LOGFILE.name = ERROR_LOGFILE
-    appender.ERROR_LOGFILE.fileName =${sys:carbon.home}/repository/logs/wso2-apigw-errors.log
-    appender.ERROR_LOGFILE.filePattern =${sys:carbon.home}/repository/logs/wso2-apigw-errors-%d{MM-dd-yyyy}-%i.log.gz
+    appender.ERROR_LOGFILE.fileName =${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apigw-errors.log
+    appender.ERROR_LOGFILE.filePattern =${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apigw-errors-%d{MM-dd-yyyy}-%i.log.gz
     appender.ERROR_LOGFILE.layout.type = PatternLayout
     appender.ERROR_LOGFILE.layout.pattern = %d{ISO8601} [%X{ip}-%X{host}] [%t] %5p %c{1} %m%n
     appender.ERROR_LOGFILE.policies.type = Policies
@@ -278,8 +278,8 @@ data:
     
     appender.OPEN_TRACING.type = RollingFile
     appender.OPEN_TRACING.name = OPEN_TRACING
-    appender.OPEN_TRACING.fileName =${sys:carbon.home}/repository/logs/wso2-apimgt-open-tracing.log
-    appender.OPEN_TRACING.filePattern =${sys:carbon.home}/repository/logs/wso2-apimgt-open-tracing-%d{MM-dd-yyyy}-%i.log.gz
+    appender.OPEN_TRACING.fileName =${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apimgt-open-tracing.log
+    appender.OPEN_TRACING.filePattern =${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apimgt-open-tracing-%d{MM-dd-yyyy}-%i.log.gz
     appender.OPEN_TRACING.layout.type = PatternLayout
     appender.OPEN_TRACING.layout.pattern = %d{HH:mm:ss,SSS} [%X{ip}-%X{host}] [%t] %5p %m%nn
     appender.OPEN_TRACING.policies.type = Policies
@@ -296,8 +296,8 @@ data:
     
     appender.TRACE_APPENDER.type = RollingFile
     appender.TRACE_APPENDER.name = TRACE_APPENDER
-    appender.TRACE_APPENDER.fileName = ${sys:carbon.home}/repository/logs/wso2-apigw-trace.log
-    appender.TRACE_APPENDER.filePattern = ${sys:carbon.home}/repository/logs/wso2-apigw-trace-%d{MM-dd-yyyy}.log
+    appender.TRACE_APPENDER.fileName = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apigw-trace.log
+    appender.TRACE_APPENDER.filePattern = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apigw-trace-%d{MM-dd-yyyy}.log
     appender.TRACE_APPENDER.layout.type = PatternLayout
     appender.TRACE_APPENDER.layout.pattern = %d{HH:mm:ss,SSS} [%X{ip}-%X{host}] [%t] %5p %c{1} %m%n
     appender.TRACE_APPENDER.policies.type = Policies
@@ -309,8 +309,8 @@ data:
     
     appender.SERVICE_APPENDER.type = RollingFile
     appender.SERVICE_APPENDER.name = SERVICE_APPENDER
-    appender.SERVICE_APPENDER.fileName = ${sys:carbon.home}/repository/logs/wso2-apigw-service.log
-    appender.SERVICE_APPENDER.filePattern = ${sys:carbon.home}/repository/logs/wso2-apigw-service-%i.log
+    appender.SERVICE_APPENDER.fileName = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apigw-service.log
+    appender.SERVICE_APPENDER.filePattern = ${sys:carbon.home}/repository/logs/${sys:instance.log}-wso2-apigw-service-%i.log
     appender.SERVICE_APPENDER.layout.type = PatternLayout
     appender.SERVICE_APPENDER.layout.pattern = %d{ISO8601} [%X{ip}-%X{host}] [%t] %5p %c{1} %m%n
     appender.SERVICE_APPENDER.policies.type = Policies
