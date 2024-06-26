@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wso2mi
-          image: jjanithcmw/wso2mi:400
+          image: janithcmw/wso2mi:400
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8290
