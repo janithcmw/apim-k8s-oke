@@ -25,6 +25,7 @@ spec:
   tls:
   - hosts:
     - {{ .Values.wso2.deployment.analytics.dashboard.ingress.hostname }}
+    secretName: {{ template "apim-320-dist-oke.resource.prefix" . }}-certificate-secret
   rules:
   - host: {{ .Values.wso2.deployment.analytics.dashboard.ingress.hostname }}
     http:
