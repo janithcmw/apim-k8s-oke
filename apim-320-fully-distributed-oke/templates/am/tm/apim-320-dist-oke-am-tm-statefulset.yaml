@@ -18,7 +18,7 @@ metadata:
   name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.wso2.deployment.am.tm.replicas }}
   selector:
     matchLabels:
       deployment: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm
