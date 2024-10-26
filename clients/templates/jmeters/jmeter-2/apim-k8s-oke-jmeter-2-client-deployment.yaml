@@ -10,7 +10,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "apim-k8s-oke-jmeter.resource.prefix" . }}-client-jmeter-deployment
+  name: {{ template "apim-k8s-oke-client.resource.prefix" . }}-client-jmeter-deployment
   namespace: {{ .Release.Namespace }}
 spec:
   replicas: 1
@@ -48,7 +48,7 @@ spec:
       volumes:
         - name: client-artifacts-storage-volume
           persistentVolumeClaim:
-            claimName: {{ template "apim-k8s-oke-jmeter.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume-claim
+            claimName: {{ template "apim-k8s-oke-client.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume-claim
         - name: jmeter-scripts-files
           configMap:
-            name: {{ template "apim-k8s-oke-jmeter.resource.prefix" . }}-jmeter-scripts-files
+            name: {{ template "apim-k8s-oke-client.resource.prefix" . }}-jmeter-scripts-files

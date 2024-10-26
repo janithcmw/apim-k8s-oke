@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ template "apim-k8s-oke.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume-claim
+  name: {{ template "apim-k8s-oke-client.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume-claim
   namespace : {{ .Release.Namespace }}
 spec:
   storageClassName: ""
@@ -11,4 +11,4 @@ spec:
   resources:
     requests:
       storage: {{ .Values.clientJmeter.storage }}
-  volumeName: {{ template "apim-k8s-oke.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume
+  volumeName: {{ template "apim-k8s-oke-client.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume
