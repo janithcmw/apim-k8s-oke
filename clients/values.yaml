@@ -19,5 +19,5 @@ clientJmeter:
 #   should create in a new file system.
 #   IP address of the mount-target should be added in 'mountTargetIP'
 #    jmeter-client-storage
-#         jmeter-client-volume/client-log-storage-volume
+#         /jmeter-client-volume/client-log-storage-volume
 # for this 'helm install jmeter .' should be used.
