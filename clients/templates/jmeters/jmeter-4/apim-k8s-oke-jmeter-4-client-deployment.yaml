@@ -10,7 +10,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "apim-k8s-oke-client.resource.prefix" . }}-client-jmeter-deployment
+  name: {{ template "apim-k8s-oke-client.resource.prefix" . }}-client-jmeter-deployment-4
   namespace: {{ .Release.Namespace }}
 spec:
   replicas: 1
