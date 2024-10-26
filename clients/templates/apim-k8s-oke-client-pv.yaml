@@ -9,5 +9,5 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: {{ .Values.mountTargetIP }}
+    server: {{ .Values.clientJmeter.mountTargetIP }}
     path: "/{{ template "apim-k8s-oke-client.resource.prefix" . }}-client-volume/client-log-storage-volume"

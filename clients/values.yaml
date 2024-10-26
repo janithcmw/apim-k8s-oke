@@ -2,7 +2,7 @@
 clientJmeter:
   targetIngress:
     ip: "20.195.33.107"     # This IP needs to be updated based on the Ingress IP of the apim deployment.
-    hostnames:              # Hostnames may also needed to be changed based on the
+    hostnames:              # Hostnames may also need to be changed based on the
       - "gateway.am.wso2.com"
       - "devportal.am.wso2.com"
       - "publisher.am.wso2.com"
