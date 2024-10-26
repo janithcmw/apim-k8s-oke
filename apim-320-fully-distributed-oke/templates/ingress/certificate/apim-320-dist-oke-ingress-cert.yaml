@@ -25,9 +25,16 @@ data:
 #                                    keytool -import -alias wso2carbon -file wso2carbon.crt -keystore client-truststore.jks
 #  4. Generate un protected version of the private key: openssl rsa -in private.key -out private-unlocked.key
 #
-#If there is no requirement to use password-protected keys:
-#  1. Generate the key and certificate: openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -config san.conf
+# If there is no requirement to use password-protected keys:
+#  1. Generate the key and certificate: openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt \
+#                                       -subj "/C=SL/ST=Southern Province/L=Galle/O=jcmw/OU=jcmw.com/CN=*.am.wso2.com" \
+#                                       -extensions v3_req -config <(echo "[req]"; \
+#                                       echo "distinguished_name=req"; \
+#                                       echo "[v3_req]"; \
+#                                       echo "keyUsage=digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment"; \
+#                                       echo "extendedKeyUsage=serverAuth,clientAuth"; \
+#                                       echo "subjectAltName=DNS:*.am.wso2.com,DNS:analytics.am.wso2.com,DNS:devportal.am.wso2.com,DNS:gateway.am.wso2.com,DNS:publisher.am.wso2.com,DNS:traffic.manager.am.wso2.com,DNS:key.manager.am.wso2.com")
 #
-#Then, base64 encode the content and add it to tls.crt and tls.key:
+# Then, base64 encode the content and add it to tls.crt and tls.key:
 #  1.  cat certificate.crt | base64 -w 0
 #  2.  cat private.key | base64 -w 0
