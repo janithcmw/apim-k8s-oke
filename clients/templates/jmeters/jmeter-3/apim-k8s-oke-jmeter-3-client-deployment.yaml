@@ -25,7 +25,9 @@ spec:
       hostAliases:
         - ip: {{ .Values.clientJmeter.targetIngress.ip }}
           hostnames:
-            {{ toYaml .Values.clientJmeter.targetIngress.hostnames | indent 6 }}
+            { { - range .Values.clientJmeter.targetIngress.hostnames } }
+            - "{{ . }}"
+            { { - end } }
       containers:
         - name: client-jmeter
           image: ubuntu:latest
