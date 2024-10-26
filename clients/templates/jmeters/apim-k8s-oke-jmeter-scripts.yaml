@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "apim-k8s-oke-jmeter.resource.prefix" . }}-jmeter-scripts-files
+  name: {{ template "apim-k8s-oke-client.resource.prefix" . }}-jmeter-scripts-files
   namespace : {{ .Release.Namespace }}
 data:
   jmeter-script-1.jmx: |-
