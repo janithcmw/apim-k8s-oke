@@ -1,0 +1,14 @@
+# PVC for all the clients
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "apim-k8s-oke.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume-claim
+  namespace : {{ .Release.Namespace }}
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{ .Values.clientJmeter.storage }}
+  volumeName: {{ template "apim-k8s-oke.resource.prefix" . }}-client-manage-pod-artifacts-storage-volume

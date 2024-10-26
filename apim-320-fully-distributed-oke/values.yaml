@@ -114,7 +114,7 @@ wso2:
             nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 
         # Number of deployment replicas
-        replicas: 1
+        replicas: 5
 
         # Kubernetes RollingUpdate strategy configurations
         strategy:
@@ -206,7 +206,7 @@ wso2:
             nginx.ingress.kubernetes.io/session-cookie-name: "route"
             nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
         # Number of deployment replicas
-        replicas: 1
+        replicas: 2
 
         # If the deployment configurations for the Traffic Manager profile of WSO2 API Manager v3.2.0 (<WSO2AM>/repository/conf/deployment.toml),
         # add the customized configuration file under (wso2 -> deployment -> am -> tm -> instanceOne -> config -> deployment.toml)
@@ -373,8 +373,9 @@ wso2:
 #         /apim-320-dist-oke-devportal-volume/am-devportal-log-storage-volume
 #         /apim-320-dist-oke-devportal-volume/am-devportal-solr-indexed-data-volume
 #         /apim-320-dist-oke-devportal-volume/am-devportal-local-carbon-database-volume
+#   for this 'helm install apim-320-dist-oke .' should be used.
     storage:
-      mountTargetIP: 10.0.10.80
+      mountTargetIP: 10.0.10.253
 
 kubernetes:
   # Name of Kubernetes service account

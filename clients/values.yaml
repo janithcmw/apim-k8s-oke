@@ -1,0 +1,23 @@
+# Values yaml of Jmeter pods.
+clientJmeter:
+  targetIngress:
+    ip: "20.195.33.107"     # This IP needs to be updated based on the Ingress IP of the apim deployment.
+    hostnames:              # Hostnames may also needed to be changed based on the
+      - "gateway.am.wso2.com"
+      - "devportal.am.wso2.com"
+      - "publisher.am.wso2.com"
+      - "websocket.am.wso2.com"
+      - "traffic.manager.am.wso2.com"
+      - "key.manager.am.wso2.com"
+      - "analytics.am.wso2.com"
+  memory: "4Gi"
+  cpu: "4"
+  storage: "15Gi"
+  mountTargetIP: 10.0.10.253
+#Create one mount target and multiple file systems by pointing to the same mount target. Followings should be the export paths
+#   of each file system. Each export path(the expected mount paths by the YAMLs needed to be created manually by the OKE UI.)
+#   should create in a new file system.
+#   IP address of the mount-target should be added in 'mountTargetIP'
+#    jmeter-client-storage
+#         jmeter-client-volume/client-log-storage-volume
+# for this 'helm install jmeter .' should be used.
