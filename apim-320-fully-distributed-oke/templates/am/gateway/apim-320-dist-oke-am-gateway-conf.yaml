@@ -98,7 +98,7 @@ data:
     type = "loadbalance"
 
     [apim.analytics]
-    enable = "true"
+    enable = "false"
     username= "$ref{super_admin.username}"
     password= "$ref{super_admin.password}"
     store_api_url = "https://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-analytics-worker-service:7444"
