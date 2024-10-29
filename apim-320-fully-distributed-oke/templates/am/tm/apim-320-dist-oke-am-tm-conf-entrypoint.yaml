@@ -39,7 +39,7 @@ data:
     test ! -d ${WSO2_SERVER_HOME} && echo "WSO2 Docker product home does not exist" && exit 1
 
     # shared artifact directories
-    directories=("executionplans" "synapse-configs")
+    directories=("executionplans" "eventpublishers" "eventreceivers" "eventstreams" "synapse-configs")
     # if the original directory locations of artifacts to be synced between nodes are empty,
     # copy the preserved, default content of these folders to these original locations
     for shared_directory in ${directories[@]}; do

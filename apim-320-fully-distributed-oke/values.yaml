@@ -40,6 +40,10 @@ wso2:
         capacity:
           # For execution plans shared between the Traffic Manager profile instances
           executionPlans: 20M
+          # For execution plans shared between the Traffic Manager profile instances
+          eventpublishers: 20M
+          # For execution plans shared between the Traffic Manager profile instances
+          eventstreams: 20M
           # For synapse artifacts of APIs shared between the Gateway profile instances
           synapseConfigs: 50M
 
@@ -362,6 +366,8 @@ wso2:
 #    apim-fully-distributed-cluster-tm
 #         /apim-320-dist-oke-tm-volume/am-tm-log-storage-volume
 #         /apim-320-dist-oke-tm-volume/am-tm-shared-executionplans-volume
+#         /apim-320-dist-oke-tm-volume/am-tm-shared-eventpublishers-volume
+#         /apim-320-dist-oke-tm-volume/am-tm-shared-eventstreams-volume
 #    apim-fully-distributed-cluster-publisher
 #         /apim-320-dist-oke-publisher-volume/am-publisher-log-storage-volume
 #         /apim-320-dist-oke-publisher-volume/am-publisher-solr-indexed-data-volume

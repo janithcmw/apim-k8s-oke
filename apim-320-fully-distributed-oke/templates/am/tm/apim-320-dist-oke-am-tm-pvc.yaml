@@ -31,6 +31,38 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-eventpublishers-volume-claim
+  namespace : {{ .Release.Namespace }}
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{ .Values.wso2.deployment.persistentRuntimeArtifacts.sharedArtifacts.capacity.eventpublishers }}
+  volumeName: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-eventpublishers-volume
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-eventstreams-volume-claim
+  namespace : {{ .Release.Namespace }}
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{ .Values.wso2.deployment.persistentRuntimeArtifacts.sharedArtifacts.capacity.eventstreams }}
+  volumeName: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-eventstreams-volume
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
   name: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-log-storage-volume-claim
   namespace : {{ .Release.Namespace }}
 spec:
