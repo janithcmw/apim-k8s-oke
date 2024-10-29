@@ -83,7 +83,7 @@ data:
       sh ${WSO2_SERVER_HOME}/bin/wso2server.sh "$@"
     else
       # start the server with the specified profile and provided startup arguments
-      sh ${WSO2_SERVER_HOME}/bin/wso2server.sh -Dprofile=${PROFILE_NAME} "$@"
+      sh ${WSO2_SERVER_HOME}/bin/wso2server.sh -Dprofile=${PROFILE_NAME} -Dinstance.log=$HOSTNAME "$@"
     fi
 
   {{ end }}
