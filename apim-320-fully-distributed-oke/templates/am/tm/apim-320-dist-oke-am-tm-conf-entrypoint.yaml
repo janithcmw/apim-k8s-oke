@@ -46,7 +46,7 @@ data:
       if test -d ${original_deployment_artifacts}/${shared_directory};
       then
         # if [[ -z "$(ls -A ${deployment_volume}/${shared_directory})" ]]; then
-        if [[true]]; then # forcing copy, due to an issue with the mounting, mounting is shared with all the locations in oke, simply when you go to the executionplans directory, you can observe the files(wso2carbon.log) of the log mount as well.
+        if [[ true ]]; then # forcing copy, due to an issue with the mounting, mounting is shared with all the locations in oke, simply when you go to the executionplans directory, you can observe the files(wso2carbon.log) of the log mount as well.
           if ! cp -R ${original_deployment_artifacts}/${shared_directory}/* ${deployment_volume}/${shared_directory};
           then
             echo "Failed to copy the preserved, default artifacts to original location (${deployment_volume}/${shared_directory})"
