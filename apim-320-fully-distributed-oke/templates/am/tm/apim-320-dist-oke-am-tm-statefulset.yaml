@@ -196,10 +196,10 @@ spec:
             claimName: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-executionplans-volume-claim
         - name: wso2am-tm-shared-eventpublishers-storage-volume
           persistentVolumeClaim:
-            claimName: { { template "apim-320-dist-oke.resource.prefix" . } }-am-tm-shared-eventpublishers-volume-claim
+            claimName: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-eventpublishers-volume-claim
         - name: wso2am-tm-shared-eventstreams-storage-volume
           persistentVolumeClaim:
-            claimName: { { template "apim-320-dist-oke.resource.prefix" . } }-am-tm-shared-eventstreams-volume-claim
+            claimName: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-shared-eventstreams-volume-claim
         - name: wso2am-tm-log-storage-volume
           persistentVolumeClaim:
             claimName: {{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-log-storage-volume-claim
