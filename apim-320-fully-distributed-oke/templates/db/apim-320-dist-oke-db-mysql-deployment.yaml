@@ -55,12 +55,19 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               value: root
             - name: MYSQL_USER
-              value: wso2carbon
+              value: {{ .Values.wso2.deployment.database.mysql.username }}
             - name: MYSQL_PASSWORD
-              value: wso2carbon
+              value: {{ .Values.wso2.deployment.database.mysql.password }}
           ports:
             - containerPort: 3306
               protocol: TCP
+          resources:
+            requests:
+              memory: {{ .Values.wso2.deployment.database.mysql.memory }}
+              cpu: {{ .Values.wso2.deployment.database.mysql.cpu }}
+            limits:
+              memory: {{ .Values.wso2.deployment.database.mysql.memory }}
+              cpu: {{ .Values.wso2.deployment.database.mysql.cpu }}
           volumeMounts:
             - name: {{ template "apim-320-dist-oke.resource.prefix" . }}-db-mysql-scripts
               mountPath: /docker-entrypoint-initdb.d
