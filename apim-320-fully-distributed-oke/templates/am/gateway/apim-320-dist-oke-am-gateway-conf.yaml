@@ -138,16 +138,16 @@ data:
 
     [apim.event_hub]
     service_url = "https://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-service:9443"
-    #event_listening_endpoints = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-0.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:5672","tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-1.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:5672"]
-    event_listening_endpoints = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-0.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:5672"]
+    event_listening_endpoints = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-0.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:5672","tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-1.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:5672"]
+    #event_listening_endpoints = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-0.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:5672"]
 
     [[apim.event_hub.publish.url_group]]
     urls = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-0.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:9611"]
     auth_urls = ["ssl://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-0.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:9711"]
 
-    #[[apim.event_hub.publish.url_group]]
-    #urls = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-1.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:9611"]
-    #auth_urls = ["ssl://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-1.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:9711"]
+    [[apim.event_hub.publish.url_group]]
+    urls = ["tcp://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-1.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:9611"]
+    auth_urls = ["ssl://{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-statefulset-1.{{ template "apim-320-dist-oke.resource.prefix" . }}-am-tm-headless-service:9711"]
   {{- end }}
   log4j2.properties: |-
     # list of all appenders
