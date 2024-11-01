@@ -105,9 +105,9 @@ data:
     appender.CARBON_LOGFILE.policies.time.interval = 1
     appender.CARBON_LOGFILE.policies.time.modulate = true
     appender.CARBON_LOGFILE.policies.size.type = SizeBasedTriggeringPolicy
-    appender.CARBON_LOGFILE.policies.size.size=10MB
+    appender.CARBON_LOGFILE.policies.size.size = 50MB
     appender.CARBON_LOGFILE.strategy.type = DefaultRolloverStrategy
-    appender.CARBON_LOGFILE.strategy.max = 20
+    appender.CARBON_LOGFILE.strategy.max = 200
     appender.CARBON_LOGFILE.filter.threshold.type = ThresholdFilter
     appender.CARBON_LOGFILE.filter.threshold.level = DEBUG
     
@@ -123,9 +123,9 @@ data:
     appender.AUDIT_LOGFILE.policies.time.interval = 1
     appender.AUDIT_LOGFILE.policies.time.modulate = true
     appender.AUDIT_LOGFILE.policies.size.type = SizeBasedTriggeringPolicy
-    appender.AUDIT_LOGFILE.policies.size.size=10MB
+    appender.AUDIT_LOGFILE.policies.size.size = 50MB
     appender.AUDIT_LOGFILE.strategy.type = DefaultRolloverStrategy
-    appender.AUDIT_LOGFILE.strategy.max = 20
+    appender.AUDIT_LOGFILE.strategy.max = 200
     appender.AUDIT_LOGFILE.filter.threshold.type = ThresholdFilter
     appender.AUDIT_LOGFILE.filter.threshold.level = INFO
     
@@ -141,7 +141,8 @@ data:
     appender.ATOMIKOS_LOGFILE.policies.time.interval = 1
     appender.ATOMIKOS_LOGFILE.policies.time.modulate = true
     appender.ATOMIKOS_LOGFILE.strategy.type = DefaultRolloverStrategy
-    appender.ATOMIKOS_LOGFILE.strategy.max = 20
+    appender.ATOMIKOS_LOGFILE.policies.size.size = 50MB
+    appender.ATOMIKOS_LOGFILE.strategy.max = 200
     
     # Appender config to CARBON_TRACE_LOGFILE
     appender.CARBON_TRACE_LOGFILE.type = RollingFile
@@ -155,9 +156,9 @@ data:
     appender.CARBON_TRACE_LOGFILE.policies.time.interval = 1
     appender.CARBON_TRACE_LOGFILE.policies.time.modulate = true
     appender.CARBON_TRACE_LOGFILE.policies.size.type = SizeBasedTriggeringPolicy
-    appender.CARBON_TRACE_LOGFILE.policies.size.size=10MB
+    appender.CARBON_TRACE_LOGFILE.policies.size.size = 50MB
     appender.CARBON_TRACE_LOGFILE.strategy.type = DefaultRolloverStrategy
-    appender.CARBON_TRACE_LOGFILE.strategy.max = 20
+    appender.CARBON_TRACE_LOGFILE.strategy.max = 200
     
     
     # Appender config to put correlation Log.
@@ -172,9 +173,9 @@ data:
     appender.CORRELATION.policies.time.interval = 1
     appender.CORRELATION.policies.time.modulate = true
     appender.CORRELATION.policies.size.type = SizeBasedTriggeringPolicy
-    appender.CORRELATION.policies.size.size=10MB
+    appender.CORRELATION.policies.size.size = 50MB
     appender.CORRELATION.strategy.type = DefaultRolloverStrategy
-    appender.CORRELATION.strategy.max = 20
+    appender.CORRELATION.strategy.max = 200
     appender.CORRELATION.filter.threshold.type = ThresholdFilter
     appender.CORRELATION.filter.threshold.level = INFO
     
@@ -190,9 +191,9 @@ data:
     appender.ERROR_LOGFILE.policies.time.interval = 1
     appender.ERROR_LOGFILE.policies.time.modulate = true
     appender.ERROR_LOGFILE.policies.size.type = SizeBasedTriggeringPolicy
-    appender.ERROR_LOGFILE.policies.size.size=10MB
+    appender.ERROR_LOGFILE.policies.size.size = 50MB
     appender.ERROR_LOGFILE.strategy.type = DefaultRolloverStrategy
-    appender.ERROR_LOGFILE.strategy.max = 20
+    appender.ERROR_LOGFILE.strategy.max = 200
     appender.ERROR_LOGFILE.filter.threshold.type = ThresholdFilter
     appender.ERROR_LOGFILE.filter.threshold.level = WARN
     
@@ -217,9 +218,9 @@ data:
     appender.OPEN_TRACING.policies.time.interval = 1
     appender.OPEN_TRACING.policies.time.modulate = true
     appender.OPEN_TRACING.policies.size.type = SizeBasedTriggeringPolicy
-    appender.OPEN_TRACING.policies.size.size=10MB
+    appender.OPEN_TRACING.policies.size.size = 50MB
     appender.OPEN_TRACING.strategy.type = DefaultRolloverStrategy
-    appender.OPEN_TRACING.strategy.max = 20
+    appender.OPEN_TRACING.strategy.max = 200
     appender.OPEN_TRACING.filter.threshold.type = ThresholdFilter
     appender.OPEN_TRACING.filter.threshold.level = TRACE
     
@@ -235,7 +236,8 @@ data:
     appender.TRACE_APPENDER.policies.time.interval = 1
     appender.TRACE_APPENDER.policies.time.modulate = true
     appender.TRACE_APPENDER.strategy.type = DefaultRolloverStrategy
-    appender.TRACE_APPENDER.strategy.max = 20
+    appender.TRACE_APPENDER.policies.size.size = 50MB
+    appender.TRACE_APPENDER.strategy.max = 200
     
     appender.SERVICE_APPENDER.type = RollingFile
     appender.SERVICE_APPENDER.name = SERVICE_APPENDER
@@ -247,7 +249,7 @@ data:
     appender.SERVICE_APPENDER.policies.size.type = SizeBasedTriggeringPolicy
     appender.SERVICE_APPENDER.policies.size.size=1000KB
     appender.SERVICE_APPENDER.strategy.type = DefaultRolloverStrategy
-    appender.SERVICE_APPENDER.strategy.max = 10
+    appender.SERVICE_APPENDER.strategy.max = 200
     
     
     appender.osgi.type = PaxOsgi
