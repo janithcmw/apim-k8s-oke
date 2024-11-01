@@ -1,7 +1,7 @@
 # Values yaml of Jmeter pods.
 clientJmeter:
   targetIngress:
-    ip: "129.159.110.21"     # This IP needs to be updated based on the Ingress IP of the apim deployment.
+    ip: "141.148.80.208"     # This IP needs to be updated based on the Ingress IP of the apim deployment.
     hostnames:              # Hostnames may also need to be changed based on the
       - "gateway.am.wso2.com"
       - "devportal.am.wso2.com"
