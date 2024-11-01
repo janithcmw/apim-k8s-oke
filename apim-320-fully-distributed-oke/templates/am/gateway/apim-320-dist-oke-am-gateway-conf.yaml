@@ -210,7 +210,6 @@ data:
     appender.ATOMIKOS_LOGFILE.policies.time.type = TimeBasedTriggeringPolicy
     appender.ATOMIKOS_LOGFILE.policies.time.interval = 1
     appender.ATOMIKOS_LOGFILE.policies.time.modulate = true
-    appender.ATOMIKOS_LOGFILE.policies.size.size = 50MB
     appender.ATOMIKOS_LOGFILE.strategy.type = DefaultRolloverStrategy
     appender.ATOMIKOS_LOGFILE.strategy.max = 200
     
@@ -306,7 +305,6 @@ data:
     appender.TRACE_APPENDER.policies.time.interval = 1
     appender.TRACE_APPENDER.policies.time.modulate = true
     appender.TRACE_APPENDER.strategy.type = DefaultRolloverStrategy
-    appender.TRACE_APPENDER.policies.size.size = 50MB
     appender.TRACE_APPENDER.strategy.max = 200
     
     appender.SERVICE_APPENDER.type = RollingFile
@@ -319,9 +317,7 @@ data:
     appender.SERVICE_APPENDER.policies.size.type = SizeBasedTriggeringPolicy
     appender.SERVICE_APPENDER.policies.size.size=1000KB
     appender.SERVICE_APPENDER.strategy.type = DefaultRolloverStrategy
-    appender.SERVICE_APPENDER.strategy.max = 200
-    appender.SERVICE_APPENDER.policies.size.size = 50MB
-    
+    appender.SERVICE_APPENDER.strategy.max = 200    
     
     appender.osgi.type = PaxOsgi
     appender.osgi.name = PaxOsgi
